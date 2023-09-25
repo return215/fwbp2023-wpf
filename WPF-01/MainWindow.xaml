@@ -5,8 +5,95 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_01"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="The Nest Dashboard"
+        Height="675" Width="1200" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="100*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="100*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.Resources>
+            <Style TargetType="materialDesign:PackIcon">
+                <Setter Property="BorderBrush" Value="{x:Null}" />
+                <Setter Property="Background" Value="{DynamicResource PrimaryHueMidBrush}" />
+                <Setter Property="Foreground" Value="{DynamicResource MaterialDesignDarkForeground}" />
+                <Setter Property="Width" Value="30" />
+                <Setter Property="Height" Value="30" />
+            </Style>
+            
+        </Grid.Resources>
         
+        <Grid 
+            Grid.ColumnSpan="2"
+            Grid.Row="0"
+            Background="{DynamicResource PrimaryHueDarkBrush}"
+            >
+            <StackPanel Orientation="Horizontal">
+                
+            </StackPanel>
+            <Label  
+                HorizontalAlignment="Center"
+                Margin="0,0,0,0" 
+                VerticalAlignment="Center"
+                Foreground="{DynamicResource MaterialDesignDarkForeground}">
+                The Nest Dashboard
+            </Label>
+        </Grid>
+        <Grid
+            Grid.Row="1" Grid.Column="0">
+            <ListView>
+                <ListView.Margin>15 15 15 15</ListView.Margin>
+                <ListViewItem
+                    HorizontalAlignment="Left" Margin="0">
+                    <Button HorizontalAlignment="Left" Margin="10">
+                        <StackPanel Margin="-10" Orientation="Horizontal" >
+                            <materialDesign:PackIcon Kind="Resistor"/>
+                            <Label Margin="10 0" Foreground="{DynamicResource MaterialDesignDarkForeground}">Resources</Label>
+                        </StackPanel>
+                    </Button>
+                </ListViewItem>
+                <ListViewItem
+                    HorizontalAlignment="Left" Margin="0">
+                    <Button HorizontalAlignment="Left" Margin="10" >
+                        <StackPanel Margin="-10" Orientation="Horizontal" >
+                            <materialDesign:PackIcon Kind="People"/>
+                            <Label Margin="10 0" Foreground="{DynamicResource MaterialDesignDarkForeground}">Units</Label>
+                        </StackPanel>
+                    </Button>
+                </ListViewItem>
+                <ListViewItem
+                    HorizontalAlignment="Left" Margin="0">
+                    <Button HorizontalAlignment="Left" Margin="10">
+                        <StackPanel Margin="-10" Orientation="Horizontal" >
+                            <materialDesign:PackIcon Kind="Group"/>
+                            <Label Margin="10 0" Foreground="{DynamicResource MaterialDesignDarkForeground}">Squad</Label>
+                        </StackPanel>
+                    </Button>
+                </ListViewItem>
+                <ListViewItem
+                    HorizontalAlignment="Left" Margin="0">
+                    <Button HorizontalAlignment="Left" Margin="10">
+                        <StackPanel Margin="-10" Orientation="Horizontal" >
+                            <materialDesign:PackIcon Kind="MapMarker"/>
+                            <Label Margin="10 0" Foreground="{DynamicResource MaterialDesignDarkForeground}">Dispatch</Label>
+                        </StackPanel>
+                    </Button>
+                </ListViewItem>
+            </ListView>
+        </Grid>
     </Grid>
 </Window>
